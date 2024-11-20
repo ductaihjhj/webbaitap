@@ -3,9 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOODEAT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sen:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>FoodEat</title>
+    <link rel="stylesheet" href="/assets/reset.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>
-    <h1>Foodeat</h1>
+    <header>
+      <div class="logo">FOODEAT</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Món Ăn Ngon Đang Chờ Bạn</h1>
+          <p>
+            Cửa hàng chúng tôi tự hào mang đến những món ăn ngon<br>được chế biến
+            từ nguyên liệu tươi sạch,<br>hòa quyện cùng hương vị độc đáo, đảm bảo
+            làm hài lòng mọi thực khách.
+          </p>
+          <div class="hero-buttons">
+            <button>Food Menu</button>
+            <button>Book a Table</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="/assets/img/pho.png" alt="Delicious food" />
+        </div>
+      </section>
+
+      <section class="top-list">
+        <h2>Danh sách</h2>
+        <p>Sản Phẩm Bán Chạy</p>
+        <div class="menu-items">
+          <div class="menu-item">
+            <img src="/assets/img/banhmi.png" alt="Noodles three" />
+            <h3>Bánh Mì</h3>
+            <p></p>
+            <span>30.000đ</span>
+          </div>
+          <div class="menu-item">
+            <img src="/assets/img/pizza.png" alt="Noodles one" />
+            <h3>Pizza</h3>
+            <p></p>
+            <span>150.000đ</span>
+          </div>
+          <div class="menu-item">
+            <img src="/assets/img/suon.png" alt="Noodles two" />
+            <h3>Sườn Sốt Chua Ngọt</h3>
+            <p></p>
+            <span>150.000đ</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="potatoes">
+        <h2>Món sắp ra mắt</h2>
+        <p>
+          Cánh gà sốt chua ngọt là sự kết hợp hoàn hảo giữa lớp vỏ giòn rụm, thấm đẫm nước sốt đậm đà vị chua ngọt,<br>hòa quyện với hương thơm hấp dẫn, mang đến trải nghiệm ẩm thực khó quên.
+        </p>
+        <img src="/assets/img/canhga.png" alt="cánh gà" />
+      </section>
+    </main>
+
+    <footer>
+      <div class="services">
+        <p>Our services:</p>
+        <ul>
+          <li>Online booking</li>
+          <li>Catering service</li>
+          <li>Membership</li>
+          <li>Delivery service</li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
