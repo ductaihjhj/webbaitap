@@ -8,6 +8,9 @@ body {
 .hero-text p {
   font-family: "EB Garamond", serif;
 }
+.gasotchuangot p {
+  font-family: "EB Garamond", serif;
+}
 /* Background cố định */
 body::before {
   content: "";
@@ -16,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/img/bg.jpg");
+  background-image: url("./assets/img/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
