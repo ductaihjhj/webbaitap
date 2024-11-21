@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +55,7 @@
 
       <!-- danh sách món ăn -->
       <section class="top-list">
-        <h2>Danh sách</h2>
+        <h2>Danh Sách</h2>
         <p>Sản Phẩm Bán Chạy</p>
         <div class="menu-items">
           <div class="menu-item">
@@ -86,6 +90,69 @@
           </div>
         </div>
       </section>
+      <!-- all món -->
+      <section class="all-dishes">
+        <h2>Danh sách tất cả các món ăn</h2>
+        <p>Khám phá các món ăn đặc sắc của chúng tôi</p>
+        <div class="dish-container">
+          <div id="dishes">
+            <div class="dish-item">
+              <img src="assets/img/phohanoi.png" alt="Phở Hà Nội" />
+              <h3>Phở Hà Nội</h3>
+              <span>50.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/ramen.png" alt="Ramen" />
+              <h3>Ramen</h3>
+              <span>50.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/pizza.png" alt="Pizza" />
+              <h3>Pizza</h3>
+              <span>250.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/comtron.png" alt="Cơm trộn" />
+              <h3>Cơm Trộn</h3>
+              <span>65.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/phodacbiet.png" alt="Phở Đặc Biệt" />
+              <h3>Phở Đặc Biệt</h3>
+              <span>70.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/banhngot.png" alt="Bánh Ngọt" />
+              <h3>Bánh Ngọt</h3>
+              <span>35.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/banhmi.png" alt="Bánh Mì" />
+              <h3>Bánh Mì</h3>
+              <span>30.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/salad.png" alt="Salad" />
+              <h3>Salad</h3>
+              <span>70.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/suon.png" alt="Sườn Chua Ngọt" />
+              <h3>Sườn Chua Ngọt</h3>
+              <span>150.000đ</span>
+            </div>
+            <div class="dish-item">
+              <img src="assets/img/mihaisan.png" alt="Mì Hải Sản" />
+              <h3>Mì Hải Sản</h3>
+              <span>100.000đ</span>
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <span id="prev" class="material-symbols-outlined">chevron_left</span>
+          <span id="next" class="material-symbols-outlined">chevron_right</span>
+        </div>
+      </section>
 
       <!-- món sắp ra mắt -->
       <section class="gasotchuangot">
@@ -109,9 +176,60 @@
           <li>Dịch vụ giao hàng</li>
         </ul>
       </div>
+      <div class="contact-info">
+        <p>Theo dõi chúng tôi:</p>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/ducwtaif.frv" target="_blank">
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ducwtaif/" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="copyright">
         <p>Copyright ©2024 ducwtaif thuộc quyền sở hữu</p>
       </div>
     </footer>
   </body>
+  <script>
+    const dishes = document.getElementById("dishes");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    let currentIndex = 0; // Vị trí ban đầu
+    const itemWidth = 240 + 20; // Kích thước mỗi món + khoảng cách
+    const totalItems = document.querySelectorAll(".dish-item").length;
+    const itemsPerView = Math.floor(
+      dishes.parentElement.offsetWidth / itemWidth
+    ); // Số món hiển thị dựa trên kích thước container
+
+    function updateView() {
+      const maxIndex = Math.max(0, totalItems - itemsPerView); // Giới hạn tối đa
+      currentIndex = Math.min(currentIndex, maxIndex); // Đảm bảo không vượt quá giới hạn
+      const offset = -currentIndex * itemWidth; // Tính khoảng cách di chuyển
+      dishes.style.transform = `translateX(${offset}px)`;
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (currentIndex < totalItems - itemsPerView) {
+        currentIndex++;
+        updateView();
+      }
+    });
+
+    prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateView();
+      }
+    });
+
+    // Điều chỉnh giao diện khi thay đổi kích thước cửa sổ
+    window.addEventListener("resize", updateView);
+  </script>
 </html>
