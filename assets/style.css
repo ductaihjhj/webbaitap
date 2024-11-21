@@ -5,10 +5,10 @@ body {
   color: #333;
   position: relative;
 }
-.hero-text p {
+.gasotchuangot p {
   font-family: "EB Garamond", serif;
 }
-.gasotchuangot p {
+.hero-text p {
   font-family: "EB Garamond", serif;
 }
 /* Background cố định */
@@ -19,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./img/bg.jpg");
+  background-image: url("/img/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -62,7 +62,6 @@ nav .material-symbols-outlined {
   margin-right: 8px; /* Khoảng cách giữa icon và chữ */
   font-size: 1.5em; /* Kích thước icon */
 }
-
 
 /* Hero Section */
 .hero {
