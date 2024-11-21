@@ -40,33 +40,46 @@
           <img src="assets/img/pho.png" alt="Delicious food" />
         </div>
       </section>
-
+<!-- danh sách món ăn -->
       <section class="top-list">
         <h2>Danh sách</h2>
         <p>Sản Phẩm Bán Chạy</p>
         <div class="menu-items">
           <div class="menu-item">
-            <img src="assets/img/banhmi.png" alt="Noodles three" />
+            <img src="assets/img/banhmi.png" alt="Bánh Mì" />
             <h3>Bánh Mì</h3>
             <p></p>
             <span>30.000đ</span>
           </div>
           <div class="menu-item">
-            <img src="assets/img/pizza.png" alt="Noodles one" />
+            <img src="assets/img/pizza.png" alt="Pizza" />
             <h3>Pizza</h3>
             <p></p>
-            <span>150.000đ</span>
+            <span>250.000đ</span>
           </div>
           <div class="menu-item">
-            <img src="assets/img/suon.png" alt="Noodles two" />
+            <img src="assets/img/suon.png" alt="Sườn Sốt Chua Ngọt" />
             <h3>Sườn Sốt Chua Ngọt</h3>
             <p></p>
             <span>150.000đ</span>
           </div>
+          <div class="menu-item">
+            <img src="assets/img/phohanoi.png" alt="Phở" />
+            <h3>Phở</h3>
+            <p></p>
+            <span>50.000đ</span>
+          </div>
+          <div class="menu-item">
+            <img src="assets/img/ramen.png" alt="Ramen" />
+            <h3>Ramen</h3>
+            <p></p>
+            <span>80.000đ</span>
+          </div>
         </div>
       </section>
 
-      <section class="potatoes">
+      <!-- món sắp ra mắt -->
+      <section class="gasotchuangot">
         <h2>Món sắp ra mắt</h2>
         <p>
           Cánh gà sốt chua ngọt là sự kết hợp hoàn hảo giữa lớp vỏ giòn rụm,
@@ -76,17 +89,29 @@
         <img src="assets/img/canhga.png" alt="cánh gà" />
       </section>
     </main>
-
+    <!-- kết -->
     <footer>
       <div class="services">
-        <p>Our services:</p>
+        <p>Dịch vụ của chúng tôi:</p>
         <ul>
-          <li>Online booking</li>
-          <li>Catering service</li>
-          <li>Membership</li>
-          <li>Delivery service</li>
+          <li>Đặt hàng trực tuyến</li>
+          <li>Chăm sóc khách hàng</li>
+          <li>Cấp độ thành viên</li>
+          <li>Dịch vụ giao hàng</li>
         </ul>
       </div>
     </footer>
   </body>
 </html>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Hiển thị các món ăn khi click
+    $(".menu-item").click(function() {
+      var itemIndex = $(this).index();
+      $(".menu-item").hide(); // Ẩn tất cả các món ăn
+      $(".menu-item").eq(itemIndex).show(); // Hiển thị món ăn được click
+    });
+  });
+</script> -->
