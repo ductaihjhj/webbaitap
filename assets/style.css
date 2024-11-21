@@ -1,11 +1,14 @@
+/* Thiết lập font và nền cho toàn trang */
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(to bottom, #f8f8f8, #eaeaea);
   color: #333;
   position: relative;
 }
-/* uh */
+.hero-text p {
+  font-family: "EB Garamond", serif;
+}
+/* Background cố định */
 body::before {
   content: "";
   position: fixed;
@@ -13,15 +16,16 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/img/bg.jpg"); /* Đường dẫn đến ảnh nền */
-  background-size: cover; /* Đảm bảo ảnh nền phủ toàn bộ màn hình */
-  background-repeat: no-repeat; /* Không lặp lại ảnh nền */
-  background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn trang */
-  background-position: center; /* Căn giữa ảnh nền */
-  filter: blur(8px); /* Làm mờ nền */
-  z-index: -1; /* Đẩy nền ra sau nội dung */
+  background-image: url("/assets/img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -36,21 +40,34 @@ header .logo {
   font-weight: bold;
 }
 
-header nav a {
-  margin: 0 10px;
+nav {
+  display: flex; /* Sử dụng flex để các item nằm ngang */
+  justify-content: flex-end;
+  width: 100%; /* Đảm bảo nav chiếm hết chiều rộng */
+}
+
+nav a {
+  display: flex; /* Chuyển phần tử anchor thành flexbox */
+  align-items: center; /* Căn giữa icon và chữ theo chiều dọc */
+  margin: 0 10px; /* Khoảng cách giữa các mục */
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
+nav .material-symbols-outlined {
+  margin-right: 8px; /* Khoảng cách giữa icon và chữ */
+  font-size: 1.5em; /* Kích thước icon */
+}
+
+
+/* Hero Section */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 60px 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Màu nền nhẹ nhàng */
-  /* border-radius: 12px; */
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  background-color: rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
 }
@@ -82,7 +99,6 @@ header nav a {
 }
 
 .hero-buttons button {
-  position: relative;
   margin: 0;
   padding: 15px 30px;
   border: none;
@@ -91,75 +107,31 @@ header nav a {
   color: white;
   font-size: 1.2em;
   cursor: pointer;
-  overflow: hidden;
-  z-index: 0;
-  transition: all 0.3s ease;
   text-transform: uppercase;
-}
-
-.hero-buttons button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #8e8756;
-  z-index: -1;
-  border-radius: 50px;
-  transition: filter 0.3s ease;
-}
-
-.hero-buttons button:hover::before {
-  filter: blur(5px);
-  background-color: #000000;
+  transition: all 0.3s ease;
 }
 
 .hero-buttons button:hover {
-  transform: translateY(-5px); /* Tạo hiệu ứng nút nổi lên khi hover */
+  background-color: #000000;
+  transform: translateY(-5px);
 }
 
 .hero-image img {
   width: 100%;
   max-width: 450px;
   border-radius: 15px;
-  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); */
   transition: transform 0.3s ease;
 }
 
 .hero-image img:hover {
-  transform: scale(1.05); /* Hiệu ứng zoom khi di chuột vào ảnh */
+  transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-text {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-buttons button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-/* danh sách món ăn */
+/* Top List Section */
 .top-list {
   text-align: center;
   padding: 60px 20px;
   background-color: rgba(255, 255, 255, 0.8);
-  /* border-radius: 12px; */
-  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .top-list h2 {
@@ -190,10 +162,6 @@ header nav a {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
   text-align: center;
   cursor: pointer;
-  display: flex;
-  flex-direction: column; /* Sắp xếp theo cột */
-  align-items: center; /* Căn giữa tất cả phần tử */
-  justify-content: space-between; /* Cân bằng không gian giữa các phần tử */
 }
 
 .menu-item:hover {
@@ -215,26 +183,114 @@ header nav a {
 
 .menu-item span {
   font-size: 1.2em;
-  color: #f7c42d;
+  color: #8e8756;
   font-weight: bold;
   margin-top: 5px;
-  display: block;
 }
 
-.menu-item p {
+/* Sắp ra mắt */
+.gasotchuangot {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.gasotchuangot h2 {
+  font-size: 2em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.gasotchuangot p {
+  font-size: 1.1em;
   color: #555;
-  margin-top: 10px;
-  font-size: 1em;
-  display: none; /* Ẩn mô tả nếu không cần */
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
 }
 
-/* Căn chỉnh phần tên món và giá sao cho phù hợp */
-.menu-item h3, .menu-item span {
-  margin: 10px 0; /* Khoảng cách giữa tên món và giá */
+.gasotchuangot img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* For mobile responsiveness */
+.gasotchuangot img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 40px 0;
+  font-family: "Arial", sans-serif;
+}
+
+footer .services {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+footer .services p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+footer .services ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .services li {
+  font-size: 1.2em;
+  margin: 10px 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .services li:hover {
+  color: #8e8756;
+  transform: translateX(10px);
+}
+
+footer .services li:before {
+  content: "•";
+  color: #8e8756;
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
   .menu-items {
     flex-direction: column;
     align-items: center;
@@ -245,87 +301,19 @@ header nav a {
     margin-bottom: 20px;
   }
 }
-
-/* sắp ra mắt */
-.gasotchuangot {
+/* Định dạng cho phần Copyright */
+.copyright {
+  background-color: #33333313; /* Màu nền tối */
+  color: #fff; /* Màu chữ sáng */
   text-align: center; /* Căn giữa nội dung */
-  padding: 40px 20px; /* Khoảng cách xung quanh nội dung */
-  background: rgba(255, 255, 255, 0.8); /* Nền bán trong suốt (80% opacity) */
-  /* border-radius: 10px; Bo góc phần chứa */
-  backdrop-filter: blur(10px); /* Tạo hiệu ứng mờ cho nền */
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); Bóng mờ cho phần chứa */
+  padding: 20px 0; /* Padding để tạo khoảng cách với các phần tử khác */
+  font-family: "Arial", sans-serif; /* Phông chữ dễ đọc */
+  font-size: 1.1em; /* Kích thước chữ phù hợp */
+  margin-top: 40px; /* Tạo khoảng cách giữa footer và nội dung trang */
 }
 
-.gasotchuangot h2 {
-  font-size: 2em; /* Chữ lớn hơn cho tiêu đề */
-  color: #333; /* Màu chữ tối cho tiêu đề */
-  font-weight: bold; /* Làm cho tiêu đề đậm */
-  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-  text-transform: uppercase; /* Viết hoa tiêu đề */
-}
-
-.gasotchuangot p {
-  font-size: 1.1em; /* Kích thước chữ vừa phải */
-  color: #555; /* Màu chữ nhẹ nhàng */
-  line-height: 1.6; /* Khoảng cách dòng dễ đọc */
-  max-width: 600px; /* Giới hạn chiều rộng của đoạn văn */
-  margin: 0 auto 20px auto; /* Căn giữa và tạo khoảng cách dưới */
-}
-
-.gasotchuangot img {
-  width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của phần chứa */
-  max-width: 400px; /* Giới hạn chiều rộng tối đa của hình ảnh */
-  height: auto; /* Tự động điều chỉnh chiều cao để giữ tỉ lệ */
-  border-radius: 10px; /* Bo góc hình ảnh */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Tạo hiệu ứng bóng cho hình ảnh */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động cho hình ảnh */
-}
-
-.gasotchuangot img:hover {
-  transform: scale(1.05); /* Phóng to nhẹ khi hover */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Bóng đậm hơn khi hover */
-}
-
-/* phần cuối web */
-footer {
-  background-color: #1a1a1a; /* Màu nền tối để tạo sự tương phản */
-  color: white; /* Màu chữ trắng */
-  padding: 40px 0; /* Khoảng cách xung quanh nội dung */
-  font-family: "Arial", sans-serif; /* Font chữ sans-serif sạch sẽ */
-}
-
-footer .services {
-  max-width: 1200px; /* Giới hạn chiều rộng */
-  margin: 0 auto; /* Căn giữa nội dung */
-  text-align: center; /* Căn giữa văn bản */
-}
-
-footer .services p {
-  font-size: 1.5em; /* Phông chữ lớn hơn cho tiêu đề */
-  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
-  text-transform: uppercase; /* Chuyển tất cả chữ thành chữ hoa */
-  letter-spacing: 2px; /* Tăng khoảng cách giữa các chữ */
-}
-
-footer .services ul {
-  list-style: none; /* Loại bỏ dấu chấm (bullet) mặc định */
-  padding: 0;
-}
-
-footer .services li {
-  font-size: 1.2em; /* Chữ lớn hơn một chút cho các mục trong danh sách */
-  margin: 10px 0; /* Khoảng cách giữa các mục */
-  transition: transform 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển động mượt mà khi hover */
-}
-
-footer .services li:hover {
-  color: #f7c42d; /* Màu vàng khi hover */
-  transform: translateX(10px); /* Di chuyển nhẹ sang bên phải khi hover */
-}
-
-footer .services li:before {
-  content: "•"; /* Thêm dấu chấm (bullet) tùy chỉnh */
-  color: #f7c42d; /* Màu vàng cho dấu chấm */
-  margin-right: 10px; /* Khoảng cách giữa dấu chấm và chữ */
-  font-size: 1.5em; /* Tăng kích thước dấu chấm */
+/* Tạo hiệu ứng hover cho văn bản nếu cần */
+.copyright p:hover {
+  color: #8e8756; /* Màu vàng khi hover */
+  text-decoration: underline; /* Gạch chân khi hover */
 }
