@@ -36,32 +36,46 @@ header {
   padding: 10px 20px;
   background-color: #6b6424;
   color: white;
+  position: relative; /* Để logo có thể được định vị tuyệt đối */
 }
 
+/* Logo chính */
 header .logo {
-  font-size: 1.5em;
-  font-weight: bold;
+  position: absolute; /* Định vị logo ra khỏi luồng bình thường */
+  top: 50%; /* Đặt logo ở giữa chiều cao header */
+  left: 20px; /* Khoảng cách từ mép trái */
+  transform: translateY(-50%); /* Căn giữa theo trục Y */
+  z-index: 10; /* Đảm bảo logo nằm trên cùng */
 }
 
+header .logo .logo-img {
+  width: 150px; /* Kích thước lớn hơn */
+  height: auto;
+  object-fit: contain; /* Giữ tỷ lệ logo */
+}
+
+/* Navbar */
 nav {
-  display: flex; /* Sử dụng flex để các item nằm ngang */
+  display: flex;
   justify-content: flex-end;
-  width: 100%; /* Đảm bảo nav chiếm hết chiều rộng */
+  width: 100%;
+  padding-left: 170px; /* Tạo khoảng trống để không che logo */
 }
 
 nav a {
-  display: flex; /* Chuyển phần tử anchor thành flexbox */
-  align-items: center; /* Căn giữa icon và chữ theo chiều dọc */
-  margin: 0 10px; /* Khoảng cách giữa các mục */
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
 nav .material-symbols-outlined {
-  margin-right: 8px; /* Khoảng cách giữa icon và chữ */
-  font-size: 1.5em; /* Kích thước icon */
+  margin-right: 8px;
+  font-size: 1.5em;
 }
+
 
 /* Hero Section */
 .hero {
